@@ -7,6 +7,7 @@ def fetch_sequence(accession_id):
     """
     Fetch nucleotide sequence from NCBI using the accession ID.
     """
+    # Make sure to put your email. Use institutional email if possible.
     Entrez.email = "your_email@example.com"  # Replace with your email
     handle = Entrez.efetch(db="nucleotide", id=accession_id, rettype="gb", retmode="text")
     record = SeqIO.read(handle, "genbank")
